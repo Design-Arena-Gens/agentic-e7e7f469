@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gradient-start: #6c77ff; /* blue-purple */
+  --gradient-end: #a855f7; /* purple */
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @apply antialiased text-slate-800 bg-gradient-to-b from-white to-slate-50;
+}
+
+/* Reusable utilities */
+.container-responsive {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.card {
+  @apply bg-white rounded-2xl shadow-soft ring-1 ring-slate-100;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-xl font-semibold transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+.btn-primary {
+  @apply btn bg-gradient-to-tr from-[var(--gradient-start)] to-[var(--gradient-end)] text-white hover:from-indigo-600 hover:to-violet-600 focus-visible:ring-indigo-500;
+}
+
+.btn-secondary {
+  @apply btn bg-white text-indigo-700 ring-1 ring-indigo-200 hover:bg-indigo-50;
+}
+
+.section-title {
+  @apply text-3xl sm:text-4xl font-bold tracking-tight text-slate-900;
+}
+
+.section-subtitle {
+  @apply text-slate-600 mt-2;
+}
